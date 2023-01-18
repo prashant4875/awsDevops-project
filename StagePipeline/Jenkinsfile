@@ -21,7 +21,7 @@ pipeline {
         NEXUS_GRP_REPO = 'awsDevops-group'
         NEXUS_LOGIN = 'nexuslogin'
         ARTIFACT_NAME = "awsDevops-v${env.BUILD_ID}.war"
-        AWS_S3_BUCKET = 'awsDevops4875'
+        AWS_S3_BUCKET = 'awsdevops4875'
         AWS_EB_APP_NAME = 'awsDevops'
         AWS_EB_ENVIRONMENT = 'Awsdevops-env'
         AWS_EB_APP_VERSION = "${env.BUILD_ID}"
