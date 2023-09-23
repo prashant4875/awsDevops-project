@@ -27,19 +27,19 @@ pipeline {
 
         stage('UNIT TEST'){
             steps {
-                sh 'mvn test'
+                sh 'mvn3 test'
             }
         }
 
         stage('INTEGRATION TEST'){
             steps {
-                sh 'mvn verify -DskipUnitTests'
+                sh 'mvn3 verify -DskipUnitTests'
             }
         }
 
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn3 checkstyle:checkstyle'
             }
             post {
                 success {
