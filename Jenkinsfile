@@ -1,11 +1,12 @@
 pipeline {
 
     agent any
-/*
+
 	tools {
-        maven "maven3"
+        maven "MAVEN3"
+        jdk "OracleJDK8"
     }
-*/
+
     environment {
         registry = "prashant4875/vproappdock"
         registryCredential = 'dockerhub'
@@ -27,19 +28,19 @@ pipeline {
 
         stage('UNIT TEST'){
             steps {
-                sh 'mvn3 test'
+                sh 'mvn test'
             }
         }
 
         stage('INTEGRATION TEST'){
             steps {
-                sh 'mvn3 verify -DskipUnitTests'
+                sh 'mvn verify -DskipUnitTests'
             }
         }
 
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
             steps {
-                sh 'mvn3 checkstyle:checkstyle'
+                sh 'mvn checkstyle:checkstyle'
             }
             post {
                 success {
